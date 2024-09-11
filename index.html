@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video/Playlist Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video/Playlist Downloader</h1>
+        
+        <form id="download-form">
+            <div class="input-group">
+                <label for="download-type">Select Type:</label>
+                <select id="download-type">
+                    <option value="video">Video</option>
+                    <option value="playlist">Playlist</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="link-input">YouTube Link:</label>
+                <input type="text" id="link-input" placeholder="Enter YouTube video or playlist link" required>
+            </div>
+
+            <div id="resolution-section" class="input-group">
+                <label for="resolution">Select Resolution:</label>
+                <select id="resolution">
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                    <option value="360p">360p</option>
+                </select>
+            </div>
+
+            <div id="playlist-resolution" class="input-group" style="display: none;">
+                <label for="playlist-resolution-select">Apply Resolution to All Videos in Playlist?</label>
+                <input type="checkbox" id="playlist-resolution-select">
+            </div>
+
+            <button type="submit" id="download-button">Download</button>
+        </form>
+
+        <div id="status-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
