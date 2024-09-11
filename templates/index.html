@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video/Playlist Downloader</title>
+    <title>YouTube Downloader</title>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" href="/static/images/icon.png">
 </head>
 <body>
     <div class="container">
-        <h1>YouTube Video/Playlist Downloader</h1>
+        <h1>
+            <img src="/static/images/youtube-logo.jpg" id="youtube-logo">
+            <br>
+            Video/Playlist Downloader
+        </h1>
         
         <form id="download-form">
             <div class="input-group">
@@ -42,7 +47,9 @@
             <button type="submit" id="download-button">Download</button>
         </form>
 
+
         <div id="status-message"></div>
+        <img src="/static/images/credit.png" id="credit-button">
     </div>
 
     <script src="/static/js/script.js"></script>

@@ -15,7 +15,6 @@ document.getElementById("download-form").addEventListener("submit", function(e) 
     const downloadType = document.getElementById("download-type").value;
     const link = document.getElementById("link-input").value;
     const resolution = document.getElementById("resolution").value;
-    const applyResolutionToAll = document.getElementById("playlist-resolution-select").checked;
 
     if (!link) {
         document.getElementById("status-message").innerHTML = "Please provide a valid YouTube link.";
@@ -33,8 +32,7 @@ document.getElementById("download-form").addEventListener("submit", function(e) 
         body: JSON.stringify({
             downloadType,
             link,
-            resolution,
-            applyResolutionToAll
+            resolution
         })
     })
     .then(response => response.json())
@@ -42,10 +40,19 @@ document.getElementById("download-form").addEventListener("submit", function(e) 
         if (data.error) {
             document.getElementById("status-message").innerHTML = `Error: ${data.error}`;
         } else {
+            // Create a download link and trigger the file download
+            const downloadLink = document.createElement('a');
+            downloadLink.href = data.filePath;
+            downloadLink.download = true;
+            downloadLink.click();
             document.getElementById("status-message").innerHTML = `Success: ${data.message}`;
         }
     })
     .catch(error => {
         document.getElementById("status-message").innerHTML = `Error: ${error.message}`;
     });
+});
+
+document.getElementById("credit-button").addEventListener('click', function(){
+    window.open("https://github.com/notkshitijsingh", "_blank");
 });

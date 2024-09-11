@@ -18,11 +18,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
 }
 
 h1 {
+    font-size: x-large;
     text-align: center;
     margin-bottom: 20px;
     color: #333;
@@ -48,7 +49,7 @@ input[type="text"], select {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #ff3c00;
     color: white;
     border: none;
     border-radius: 5px;
@@ -56,11 +57,37 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #ff3c00;
 }
 
 #status-message {
     margin-top: 20px;
     font-size: 14px;
     color: #333;
+}
+
+.red-text {
+    color: #ff3c00;
+}
+
+
+#youtube-logo {
+    max-height: 80px;
+}
+
+#credit-button {
+    max-height: 50px;
+}
+
+#credit-button:hover {
+    cursor: pointer;
+    animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
 }
